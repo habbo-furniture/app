@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import "package:flutter_gen/gen_l10n/app_localizations.dart";
-import "package:flutter_localizations/flutter_localizations.dart";
+import "package:habbo_furniture/src/furni_list/furni_list_screen.dart";
+import "package:vrouter/vrouter.dart";
 
 /// Start Point
 class HabboFurniture extends StatelessWidget {
@@ -9,23 +9,17 @@ class HabboFurniture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return VRouter(
+      routes: [
+        VWidget(path: "/", widget: FurniListScreen())
+      ],
+      initialUrl: "/",
+      debugShowCheckedModeBanner: false,
       restorationScopeId: "habbo.furniture",
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale("en", ""),
-        Locale("de", ""),
-      ],
-      onGenerateTitle: (BuildContext context) =>
-        AppLocalizations.of(context)!.appTitle,
+      onGenerateTitle: (BuildContext context) => "Habbo.Furniture",
       theme: ThemeData(),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.dark,
-    );
+      );
   }
 }
