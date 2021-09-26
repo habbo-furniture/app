@@ -13,6 +13,7 @@ class HabboFurniture extends StatelessWidget {
       routes: [
         VWidget(path: "/", widget: FurniListScreen())
       ],
+      mode: VRouterMode.history,
       initialUrl: "/",
       debugShowCheckedModeBanner: false,
       restorationScopeId: "habbo.furniture",
