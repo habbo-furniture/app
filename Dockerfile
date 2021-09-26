@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 
 USER root
-RUN chown -R flutter:flutter .
+RUN chown -R flutter:flutter /app
 USER flutter
 
 RUN flutter pub get
