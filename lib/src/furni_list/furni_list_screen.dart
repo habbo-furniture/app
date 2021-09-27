@@ -4,7 +4,10 @@ class FurniListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Image.asset("images/logo.png", fit: BoxFit.contain),
+        toolbarHeight: 100,
+      ),
       drawer: Drawer(
         child: Column(
           children: [
