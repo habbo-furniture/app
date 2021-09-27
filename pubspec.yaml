@@ -13,6 +13,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_gen: ^3.1.2
+  flutter_mobx: ^2.0.2
+  mobx: ^2.0.4
+  mobx_codegen: ^2.0.3
   vrouter: ^1.2.0+13
 
 dev_dependencies:
