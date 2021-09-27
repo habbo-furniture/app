@@ -20,7 +20,7 @@ class HabboFurniture extends StatelessWidget {
       onGenerateTitle: (BuildContext context) => "Habbo.Furniture",
       theme: ThemeData(),
       darkTheme: ThemeData.dark(),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       );
   }
 }
