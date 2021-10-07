@@ -4,7 +4,7 @@ import "package:flutter/material.dart";
 class Navigation extends StatelessWidget {
   final Widget? _child;
 
-  Navigation(this._child);
+  const Navigation(this._child);
 
   @override
   Widget build(BuildContext context) {
