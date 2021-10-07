@@ -1,16 +1,12 @@
-FROM fischerscode/flutter AS build
+FROM node:12-alpine
+
+EXPOSE 3000
 
 WORKDIR /app
+COPY package.json .
+COPY yarn.lock .
+RUN yarn
 COPY . .
+RUN yarn build
+ENTRYPOINT [ "node", "build/index.js" ]
 
-USER root
-RUN chown -R flutter:flutter /app
-USER flutter
-
-RUN flutter pub get
-
-RUN flutter build web
-
-FROM caddy:2-alpine
-
-COPY --from=build /app/build/web/ /usr/share/caddy
